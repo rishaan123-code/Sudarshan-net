@@ -1,5 +1,58 @@
 <!doctype html>
 <html lang="en">
+ 
+<style>
+#sudarshanSplash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: radial-gradient(
+    circle at center,
+    #173b55,
+    #061525 75%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7e7c5;
+  text-align: center;
+  padding: 24px;
+  transition: opacity .5s ease;
+}
+#sudarshanSplash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash-content {
+  width: 100%;
+  max-width: 440px;
+}
+.splash-chakra {
+  width: min(60vw, 220px);
+  height: auto;
+  border-radius: 25%;
+  filter: drop-shadow(0 0 25px #d5a04a88);
+}
+.splash-title {
+  color: #f2bb65;
+  font: bold 36px Georgia, serif;
+  margin: 20px 0 8px;
+}
+.splash-tagline {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.splash-welcome {
+  font: 25px Georgia, serif;
+  margin-top: 38px;
+}
+.splash-question {
+  font: 20px Georgia, serif;
+  color: #f2bb65;
+  margin-top: 12px;
+}
+</style>
+
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sudarshan Net — Ancient Wisdom. Future Intelligence.</title>
