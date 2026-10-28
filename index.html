@@ -129,11 +129,111 @@ dialog{border:1px solid var(--gold);border-radius:14px;max-width:550px;width:cal
 <div id="sudarshanSplash">
   <div class="splash-content">
 
-    <img
-      src="./icons/chakra-splash.png"
-      class="splash-chakra"
-      alt="Sudarshan Chakra"
-    >
+   
+<svg
+  class="splash-chakra"
+  viewBox="0 0 240 240"
+  width="220"
+  height="220"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Golden Sudarshan Chakra"
+>
+  <defs>
+    <radialGradient id="chakraGold">
+      <stop offset="0%" stop-color="#fff1b8"/>
+      <stop offset="50%" stop-color="#f6bc54"/>
+      <stop offset="100%" stop-color="#9a5416"/>
+    </radialGradient>
+
+    <path
+      id="chakraBlade"
+      d="M115 34 L120 5 L125 34 Z"
+      fill="url(#chakraGold)"
+      stroke="#ffdc83"
+    />
+
+    <path
+      id="chakraSpoke"
+      d="M120 100 L120 42"
+      stroke="#e8aa43"
+      stroke-width="3"
+    />
+  </defs>
+
+  <g class="chakra-rotation">
+    <g id="chakraBlades"></g>
+
+    <circle cx="120" cy="120" r="87"
+      fill="none" stroke="#8d4c18"
+      stroke-width="9"/>
+
+    <circle cx="120" cy="120" r="87"
+      fill="none" stroke="#f6c568"
+      stroke-width="5"/>
+
+    <circle cx="120" cy="120" r="76"
+      fill="none" stroke="#e4a43d"
+      stroke-width="2"/>
+
+    <circle cx="120" cy="120" r="28"
+      fill="url(#chakraGold)"
+      stroke="#ffe5a2"
+      stroke-width="4"/>
+
+    <circle cx="120" cy="120" r="12"
+      fill="#fff0b6"/>
+  </g>
+</svg>
+
+<style>
+.chakra-rotation {
+  transform-origin: 120px 120px;
+  animation: rotateChakra 12s linear infinite;
+}
+
+@keyframes rotateChakra {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chakra-rotation {
+    animation: none;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const group = document.getElementById(
+    "chakraBlades"
+  );
+
+  if (!group) return;
+
+  const ns = "http://www.w3.org/2000/svg";
+
+  for (let i = 0; i < 24; i++) {
+    const angle = i * 15;
+    const blade = document.createElementNS(ns, "use");
+    blade.setAttribute("href", "#chakraBlade");
+    blade.setAttribute(
+      "transform",
+      `rotate(${angle} 120 120)`
+    );
+    group.appendChild(blade);
+
+    const spoke = document.createElementNS(ns, "use");
+    spoke.setAttribute("href", "#chakraSpoke");
+    spoke.setAttribute(
+      "transform",
+      `rotate(${angle} 120 120)`
+    );
+    group.appendChild(spoke);
+  }
+})();
+</script>
+
 
     <div class="splash-title">
       SUDARSHAN NET
