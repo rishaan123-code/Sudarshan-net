@@ -125,6 +125,51 @@ dialog{border:1px solid var(--gold);border-radius:14px;max-width:550px;width:cal
 #courseReader select{padding:10px;border-radius:9px;max-width:100%}
 </style>
 </head>
+ 
+<div id="sudarshanSplash">
+  <div class="splash-content">
+
+    <img
+      src="./icons/chakra-splash.png"
+      class="splash-chakra"
+      alt="Sudarshan Chakra"
+    >
+
+    <div class="splash-title">
+      SUDARSHAN NET
+    </div>
+
+    <div class="splash-tagline">
+      ANCIENT WISDOM. FUTURE INTELLIGENCE.
+    </div>
+
+    <div class="splash-welcome">
+      Welcome to Sudarshan Net
+    </div>
+
+    <div class="splash-question">
+      What knowledge will you gain today?
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const splash = document.getElementById(
+    "sudarshanSplash"
+  );
+
+  setTimeout(function () {
+    splash.classList.add("hide");
+
+    setTimeout(function () {
+      splash.remove();
+    }, 500);
+  }, 2500);
+})();
+</script>
+
 <body>
 <header class="topbar"><a href="#" class="brand" style="text-decoration:none">◉ SUDARSHAN NET</a><nav><a href="#products">Products</a><a href="#pathways">Learning paths</a><a href="#principles">Our principles</a><a href="#about">About</a></nav></header>
 <section class="hero">
